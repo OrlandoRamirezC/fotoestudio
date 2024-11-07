@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+        "nav"
+        "caja"
+        "main"
+        "footer";
+    grid-template-rows: 4.5rem 6rem auto 3rem;
+}
+
+nav {
+    background-color: #000;
+    color: #ffffff;
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.lista {
+    display: none;
+}
+
+.boxnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.boxnav img {
+    width: 12rem;
+    height: auto;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .625rem;
+    padding: .313rem;
+}
+
+.caja {
+    grid-area: caja;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem 1rem 1rem;
+    gap: 3px;
+    background-color: #303030;
+}
+
+.caja h1 {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+}
+
+a:hover {
+    font-size: larger;
+}
+
+.lista li {
+    transition: all 1s;
+}
+
+.lista li:hover {
+    font-size: larger;
+}
+
+.boxes img {
+    width: 100%;
+    height: 75%;
+}
+
+.boxes {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.perfil {
+    width: 23rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subperfil {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border: #000 solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+    background-color: #aeabb1;
+}
+
+.fotobook {
+    width: 23rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subfotobook {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border: #000 solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+    background-color: #aeabb1;
+}
+
+.teatro {
+    width: 23rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.subteatro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    border: #000 solid;
+    border-radius: 5px;
+    overflow-y: scroll;
+    background-color: #aeabb1;
+}
+
+.box0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #dbdbdb solid 1px;
+    border-radius: 10px;
+    width: 15rem;
+    background-color: #eeeeee;
+}
+
+main button {
+    color: #fff;
+    background-color: #23065a;
+    border-radius: 10px;
+    border: none;
+    padding: 0.4rem;
+    margin-bottom: 0.5rem;
+    transition: all 1s;
+}
+
+button:hover {
+    background-color: #000;
+    font-size: larger;
+}
+
+main h2 {
+    font-size: 1.7rem;
+    padding: 6px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.subperfil:hover {
+    animation: blup 0.9s both;
+}
+
+.subfotobook:hover {
+    animation: blup 0.9s both;
+}
+
+.subteatro:hover {
+    animation: blup 0.9s both;
+}
+
+@keyframes blup {
+    0% {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    40% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    50% {
+        transform: scale3d(0.85, 1.15, 1);
+    }
+
+    65% {
+        transform: scale3d(1.05, 0.95, 1);
+    }
+
+    75% {
+        transform: scale3d(0.95, 1.05, 1);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* Tablet */
+@media (width >=576px) {
+    body {
+        grid-template-areas:
+            "nav nav"
+            "caja main"
+            "footer footer";
+        grid-template-columns: 25% auto;
+        grid-template-rows: 4.8rem auto 3.5rem;
+    }
+
+    .icono {
+        display: none;
+    }
+
+    .caja {
+        height: 100%;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 2rem;
+    }
+
+    .caja a {
+        padding-bottom: 3rem;
+    }
+
+    .boxnav {
+        translate: 350px;
+        transition: all 5s;
+    }
+}
+
+/* Escritorio */
+@media (width >=992px) {
+    body {
+        grid-template-areas:
+            "nav caja"
+            "nav main"
+            "footer main";
+        grid-template-rows: 5.2rem auto 4.5rem;
+        grid-template-columns: 14rem auto;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1.4rem;
+        padding-top: 1.6rem;
+    }
+
+    main {
+        align-items: flex-start;
+        overflow-y: scroll;
+    }
+
+    .caja a {
+        display: none;
+    }
+
+    .caja {
+        background-color: #23065a;
+
+    }
+
+    .caja h1 {
+        display: contents;
+    }
+
+    .lista {
+        display: contents;
+    }
+
+    .lista ul {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        list-style-type: none;
+        gap: 1.2rem;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: #dbdbdb solid 1px;
+        border-radius: 10px;
+        width: 15rem;
+    }
+
+    .boxes {
+        flex-wrap: wrap;
+        height: 25rem;
+    }
+
+    footer {
+        gap: 5px;
+        text-align: center;
+    }
+
+    .boxnav {
+        translate: 0px;
+    }
+
+    .caja {
+        animation: cambiocolor 4s linear infinite alternate both;
+    }
+
+    @keyframes cambiocolor {
+        0% {
+            background: #00b0bd;
+        }
+
+        50% {
+            background: #720bad;
+        }
+
+        100% {
+            background: #ffffff;
+        }
+    }
+
+    .slogan {
+        animation: agrandar 3s ease infinite;
+    }
+
+    @keyframes agrandar {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+
+        40% {
+            opacity: 0.6;
+            transform: scale(1.6);
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+}
